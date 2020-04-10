@@ -7,3 +7,5 @@ if int(gain) > int(costs):
     hr = input("Введите количество сотрудников в фирме ")
     h_eff = efficiency / int(hr)
     print("Прибыль фирмы в расчете на сотрудника " + str("{:.3f}".format(h_eff)))
+else:
+    print("Издержки превышают прибыль")
