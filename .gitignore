@@ -154,6 +154,11 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# venv and .idea
+venv
+.idea
+
+
 Будет удалено venv/include/
 Будет удалено venv/lib/python3.8/site-packages/__pycache__/
 Будет удалено venv/lib/python3.8/site-packages/pip/__pycache__/
