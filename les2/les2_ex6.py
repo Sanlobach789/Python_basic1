@@ -5,8 +5,8 @@ prices = []
 counts = []
 units = []
 while i <= 2:
-    item_id = input("номер товара: ")
-    item_id = int(item_id)
+    item_number = input("номер товара: ")
+    item_number = int(item_number)
     item_name = input("Введите название товара: ")
     item_price = input("Введите цену товара: ")
     item_price = int(item_price)
@@ -17,7 +17,7 @@ while i <= 2:
                  "цена ": item_price,
                  "количество ": item_count,
                  "Единица измерения ": item_unit}
-    good = [(item_id, good_info)]
+    good = [(item_number, good_info)]
     goods_list.extend(good)
     names.append(item_name)
     prices.append(item_price)
