@@ -1,21 +1,28 @@
-from typing import List
+i = 0
+goods_list = []
+goods_analytics = {"Название": list(),
+                   "Цена": list(),
+                   "Количество": list(),
+                   "Ед": list()}
+count = int(input("Кол-во добавляемого товара: "))
+while i < count:
+    item_id = int(input("номер товара: "))
+    item_name = input("Введите название товара: ")
+    item_price = int(input("Введите цену товара: "))
+    item_count = int(input("Введите количество товара: "))
+    item_unit = input("Введите единицу измерения: ")
+    good_info = {"Название": item_name,
+                 "Цена": item_price,
+                 "Количество": item_count,
+                 "Ед": item_unit}
+    good = [(item_id, good_info)]
+    goods_list.extend(good)
+    i += 1
 
-good_id = 0
-total_list = {}
-while good_id <= 2:
-    item = input("Введите характеристики товара через запятую 'название цена количество единица измерения': ")
-    good_char = list(item.split(","))
-    if len(good_char) > 4:
-        print("Вы ввели больше характеристик.")
-    elif len(good_char) < 4:
-        print("Вы ввели не все характеристики")
-    elif len(good_char) == 4:
-        good_id += 1
-        goods = {"": good_id,
-                 "Название ": str(good_char[0]),
-                 "Цена ": str(good_char[1]),
-                 "Количество ": str(good_char[2]),
-                 "ед.": str(good_char[3])}
-        print(goods)
-        total_list = dict(list(total_list.items()) + list(goods.items()))
-print(total_list)
+for item in goods_list:
+    goods_analytics["Название"].append(item[1].get('Название'))
+    goods_analytics["Цена"].append(item[1].get('Цена'))
+    goods_analytics["Количество"].append(item[1].get('Количество'))
+    goods_analytics["Ед"].append(item[1].get('Ед'))
+
+print(goods_analytics)
