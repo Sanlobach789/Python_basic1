@@ -5,11 +5,12 @@ def fibo_gen(x):
         yield result
 
 
-var = int(input())
+var = int(input("Введите число "))
 
-res = [el for el in fibo_gen(var)]
+i = 1
 
-i=0
-while i <= len(res) - 1 and i <= 14:
-    print(res[i])
+for el in fibo_gen(var):
+    if i > 15:
+        break
+    print(el)
     i += 1
