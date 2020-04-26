@@ -1,7 +1,7 @@
 from random import randint
 
 
-numb_list = [el for el in range(randint(10, 500))]
+numb_list = [randint(1, 100) for el in range(20)]
 i = 0
 new_list = []
 while i < len(numb_list) - 1:
