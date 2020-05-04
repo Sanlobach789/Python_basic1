@@ -1,33 +1,45 @@
 class Cell:
 
     def __init__(self, count):
-        self.cell_count = '*' * count
+        self.cell_count = count
 
     def __add__(self, other):
-        return self.cell_count + other.cell_count
+        return '*' * (self.cell_count + other.cell_count)
 
     def __sub__(self, other):
-        result = '*' * (len(self.cell_count) - len(other.cell_count))
+        result = '*' * (self.cell_count - other.cell_count)
         if result != '':
             return result
         else:
             return print('Ошибка, отрицательное значение')
 
     def __mul__(self, other):
-        result = '*' * (len(self.cell_count) * len(other.cell_count))
+        result = '*' * (self.cell_count * other.cell_count)
         return result
 
     def __truediv__(self, other):
-        result = '*' * (len(self.cell_count) // len(other.cell_count))
+        result = '*' * (self.cell_count // other.cell_count)
         return result
 
-    def __iter__(self):
-        return self.cell_count.__iter__()
-
     def make_order(self, count):
-        pass
+        i = 0
+        counter = 0
+        result = ''
+        while i < self.cell_count:
+            if counter < count:
+                result += '*'
+                counter += 1
+                i += 1
+            else:
+                result += '\n'
+                counter = 0
+        print(result)
 
 
-test1 = Cell(15)
+test1 = Cell(7)
 test2 = Cell(2)
-print(test1.__iter__())
+print(test1 + test2)
+print(test1 - test2)
+print(test1 * test2)
+print(test1 / test2)
+test1.make_order(3)
